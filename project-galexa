@@ -16,3 +16,26 @@ $ curl https://bitbucket.org/ucic-1/avskit/raw/master/install.sh | sh #installs 
 
 #after installing the program your raspberrypi should start acting as a wifi hotspot.
 #the hotspot should be called UCIC_2 and the password should be ubiquartus1
+
+$ sudo nano /etc/network/interfaces.d/interfaces #creates a new interfaces file
+
+#once the file opens, type this in.
+
+auto lo
+
+iface lo inet loopback
+iface eth0 inet dhcp
+
+allow-hotplus wlan0
+auto wlan0
+
+iface wlan0 inet dhcp
+        wpa-ssid "YOUR_WIFI_NAME" #change YOUR_WIFI_NAME with the name of your ssid
+        wpa-psk "YOUR_WIFI_PASSWORD" #change YOUR_WIFI_PASSWORD with your router password
+        
+#save the file by using Ctrl + x
+
+& sudo reboot #reboots the raspberry pi and it should connect to the internet
+
+#go to https://new-ip-address:3000 and replace new-ip-address with your raspberry pi IP address.
+#these are all the main steps to get the AVS kit to start working!
