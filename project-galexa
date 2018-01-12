@@ -11,3 +11,5 @@ $ echo 'pcm.!default {
   playback.pcm "plughw:NUM_1" #change NUM_1 with the number of your speaker card
   capture.pcm "plughw:NUM_2" #change NUM_2 with the number of your microphone card number
 }’>~/.asoundrc
+
+$ curl https://bitbucket.org/ucic-1/avskit/raw/master/install.sh | sh #installs the program for the assistant service
