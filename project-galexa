@@ -1,2 +1,13 @@
 #Project Galexa is a voice activated online assistant to help with various tasks. It uses UCIC's Ubi Kit to use Amazon's Alexa service and Google's Assistant service.
 
+$ arecord test.wav #records your mic
+$ aplay test.wav #plays back your most recent recording
+
+$ aplay–l
+$ arecord-l #if the above steps didn't work, find the card numbers for each device that you're using
+
+$ echo 'pcm.!default {
+  type asym
+  playback.pcm "plughw:NUM_1" #change NUM_1 with the number of your speaker card
+  capture.pcm "plughw:NUM_2" #change NUM_2 with the number of your microphone card number
+}’>~/.asoundrc
