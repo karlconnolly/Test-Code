@@ -13,3 +13,6 @@ $ echo 'pcm.!default {
 }’>~/.asoundrc
 
 $ curl https://bitbucket.org/ucic-1/avskit/raw/master/install.sh | sh #installs the program for the assistant service
+
+#after installing the program your raspberrypi should start acting as a wifi hotspot.
+#the hotspot should be called UCIC_2 and the password should be ubiquartus1
